@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.truong.quytchat" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <permission
+        android:name="com.example.truong.quytchat.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.example.truong.quytchat.permission.C2D_MESSAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="21" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/icon"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        <activity
+            android:name=".ChatActivity"
+            android:icon="@drawable/icon"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".ListAccountActivity"
+            android:icon="@drawable/icon"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".SignupActivity"
+            android:icon="@drawable/icon"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".SigninActivity"
+            android:icon="@drawable/icon"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".SplashScreenActivity"
+            android:icon="@drawable/icon"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name="com.example.truong.quytchat.gcm.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.example.truong.quytchat" />
+            </intent-filter>
+        </receiver>
+
+        <service android:name="com.example.truong.quytchat.gcm.GCMNotificationIntentService" />
+    </application>
+
+</manifest>

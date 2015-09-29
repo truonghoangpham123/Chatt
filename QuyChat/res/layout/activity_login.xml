@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff" >
+
+    <ImageView
+        android:id="@+id/imgLogo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logo_login"
+        android:tileMode="repeat"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:id="@+id/tvSignUp"
+        android:text="@string/Sign_up"
+        android:textColor="#01b765"
+        android:textSize="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/btLogIn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="@string/user_name"
+        android:textColor="#01b765"
+        android:background="@drawable/edittext_style"
+        android:id="@+id/etUserName"
+        android:singleLine="true"
+        android:drawableLeft="@drawable/ic_username"
+        android:layout_centerVertical="true"
+        android:layout_below="@+id/imgLogo"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:background="@drawable/edittext_style"
+        android:drawableLeft="@drawable/ic_pwd"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:hint="@string/pass_user"
+        android:textColor="#01b765"
+        android:ems="10"
+        android:id="@+id/etPass"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/etUserName"
+        android:layout_centerHorizontal="true"
+        android:password="true" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="@string/Log_in"
+        android:id="@+id/btLogIn"
+        android:textColor="#ffffffff"
+        android:background="#01b765"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/chksaveacount"
+        android:layout_centerHorizontal="true" />
+
+    <CheckBox
+        android:id="@+id/chksaveacount"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:textColor="#01b765"
+        android:textSize="15dp"
+        android:layout_marginRight="20dp"
+        android:layout_below="@+id/etPass"
+        android:layout_centerHorizontal="true"
+        android:text="@string/save_account" />
+
+</RelativeLayout>
